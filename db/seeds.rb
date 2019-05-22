@@ -32,3 +32,10 @@ Flight.create(
   departure_id: 2,
   take_off: Time.new(2019, 7, 10, 10)
 )
+
+User.create(
+  name: "test",
+  email: "test@mail.com",
+  password: "abcdef",
+  password_confirmation: "abcdef"
+)
