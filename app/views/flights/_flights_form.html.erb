@@ -1,0 +1,13 @@
+
+<%= form_for(:booking, url: new_booking_path) do |f|%>
+  <% flights.each do |flight| %>
+    <%= f.radio_button :flight, flight.id %>
+    <%= f.label 'flight_#{flight.id}'.to_sym, 
+    "From: #{flight.departure.name},
+    To: #{flight.destination.name}, 
+    Leaving: #{flight.take_off}"
+    %><br>
+  <%end%>
+
+  <%= f.submit 'Book'%>
+<%end%>

@@ -1,0 +1,16 @@
+<%= form_for(:city, url: flights_path, method: :get) do |f| %>
+
+  <%= f.label :departure, "From:" %><br>
+  <%= f.collection_select(:departure, cities, :id, :name) %><br>
+
+  <%= f.label :destination, "To:" %><br>
+  <%= f.collection_select(:destination, cities, :id, :name) %><br>
+
+  <%= f.label :passengers, "Number of passengers:" %><br>
+  <%= f.collection_select(:passengers, (1..4), :itself, :itself)%><br>
+
+  <%= f.label :take_off, "Date:"%><br>
+  <%= f.collection_select(:take_off, dates, :itself, :itself) %><br>
+
+  <%= f.submit "Search" %>
+<%end%>

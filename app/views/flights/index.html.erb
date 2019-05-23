@@ -1,0 +1,7 @@
+<h1>Book your flight</h1>
+
+<%= render partial: 'search_form', locals: {cities: @cities, dates: @dates}%>
+
+<% if @flights %>
+  <%= render partial: 'flights_form', locals: {flights: @flights}%>
+<% end %>

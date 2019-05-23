@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'flights#index'
+
   get '/signup', to: "users#new"
   post '/signup', to: "users#create"
 
@@ -7,4 +9,6 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   
   resources :users, only: [:show]
+  resources :flights, only: [:index]
+  resources :bookings, only: [:new, :create]
 end

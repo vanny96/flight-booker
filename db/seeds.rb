@@ -24,6 +24,12 @@ Flight.create(
 Flight.create(
   destination_id: 1,
   departure_id: 2,
+  take_off: Time.new(2019, 7, 8, 15)
+)
+
+Flight.create(
+  destination_id: 1,
+  departure_id: 2,
   take_off: Time.new(2019, 7, 9, 10)
 )
 
