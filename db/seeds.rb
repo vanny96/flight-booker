@@ -38,6 +38,40 @@ Flight.create(
   departure_id: 2,
   take_off: Time.new(2019, 7, 10, 10)
 )
+Flight.create(
+  destination_id: 1,
+  departure_id: 2,
+  take_off: Time.new(2019, 7, 8, 20)
+)
+
+Flight.create(
+  destination_id: 1,
+  departure_id: 2,
+  take_off: Time.new(2019, 7, 9, 12)
+)
+
+Flight.create(
+  destination_id: 1,
+  departure_id: 2,
+  take_off: Time.new(2019, 7, 10, 23)
+)
+Flight.create(
+  destination_id: 2,
+  departure_id: 1,
+  take_off: Time.new(2019, 7, 8, 20)
+)
+
+Flight.create(
+  destination_id: 2,
+  departure_id: 1,
+  take_off: Time.new(2019, 7, 9, 12)
+)
+
+Flight.create(
+  destination_id: 2,
+  departure_id: 1,
+  take_off: Time.new(2019, 7, 10, 23)
+)
 
 User.create(
   name: "test",
