@@ -1,12 +1,18 @@
 
-<%= form_for(:booking, url: new_booking_path) do |f|%>
+<%= form_for(:booking, url: new_booking_path, method: :get) do |f|%>
+
+  <%= f.hidden_field :number_of_passengers, value: @number_of_passengers%>
+
   <% flights.each do |flight| %>
+
     <%= f.radio_button :flight, flight.id %>
+
     <%= f.label 'flight_#{flight.id}'.to_sym, 
     "From: #{flight.departure.name},
     To: #{flight.destination.name}, 
-    Leaving: #{flight.take_off}"
-    %><br>
+    Leaving: #{flight.take_off}"%>
+    <br>
+
   <%end%>
 
   <%= f.submit 'Book'%>

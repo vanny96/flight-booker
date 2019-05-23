@@ -1,0 +1,31 @@
+<h1>Booking your flight</h1>
+<%= form_for @booking do |f| %>
+
+  <%= render partial: 'shared/errors', locals: {errors: @booking.errors}%>
+
+  <%= f.hidden_field :flight, value: @booking.flight.id%>
+  <%= f.hidden_field :number_of_passengers, value: @number_of_passengers%>
+
+  <%= f.label :flight_id, "Flight ID:" %>
+  <%= f.text_field :flight_id, readonly: true %><br>
+
+  <%@number_of_passengers.to_i.times do |i|%>
+    <%= f.fields_for :passengers, @booking.passengers.build do |p_form|%>
+      Passenger <%= i + 1%>: <br>
+
+        <%if i == 0 && logged_in? %>
+          <% user = current_user%>
+        <%else%>
+          <% user = User.new %>
+        <%end%>
+
+        <%= p_form.label :name %><br>
+        <%= p_form.text_field :name, value: user.name %><br>
+
+        <%= p_form.label :email %><br>
+        <%= p_form.email_field :email, value: user.email %><br>
+    <%end%>
+  <%end%>
+
+  <%= f.submit "Book your flight" %>
+<%end%>
