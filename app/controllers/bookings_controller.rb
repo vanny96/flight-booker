@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+  include BookingsHelper
 
   def new
     flight = Flight.find(params[:booking][:flight])
@@ -10,6 +11,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new params_for_booking
 
     if @booking.save
+      send_emails @booking
       flash[:succes] = 'Booked the flight'
       redirect_to @booking
     else

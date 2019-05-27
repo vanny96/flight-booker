@@ -1,15 +1,8 @@
 <h1>Booking completed</h1>
 
-<strong>From: </strong>
-<%= @booking.flight.departure.name %><br>
+<%= render partial: 'shared/booking', locals: {booking: @booking} %>
 
-<strong>To: </strong>
-<%= @booking.flight.destination.name %><br>
-
-<strong>Taking Off: </strong>
-<%= @booking.flight.take_off %><br>
-
-<strong>Passengers: </strong>
+<strong> Passengers: </strong>
 <ol>
   <% @booking.passengers.each do |passenger| %>
     <li><%= passenger.name%> - <%= passenger.email %></li>
