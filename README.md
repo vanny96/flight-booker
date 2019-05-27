@@ -7,6 +7,8 @@ You can see the results in action at the Heroku link.
 
 Signing up is not necessary, but if you do the form were you have to type the name and email of the passengers will be precompiled for the first passenger (you can edit your name out if you're not going to be a passenger)
 
+Once you book the tickets an email will be sent to you with your tickets information.
+
 The flights are all fakes and given that they are going to be seeded the search results will show even flights that have already took off.
 
 ## Heroku Link
